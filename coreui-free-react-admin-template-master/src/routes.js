@@ -182,6 +182,20 @@ const User = Loadable({
   loading: Loading,
 });
 
+const Home = Loadable({
+  loader: () => import('./views/Epd/Home/Home'),
+  loading: Loading,
+});
+
+const Dossier = Loadable({
+  loader: () => import('./views/Epd/Dossier/Dossier'),
+  loading: Loading,
+});
+
+const Afspraken = Loadable({
+  loader: () => import('./views/Epd/Afspraken/Afspraken'),
+  loading: Loading,
+});
 
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
@@ -227,6 +241,9 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+  { path: '/home', exact: true, name: '', component: Home },
+  { path: '/dossier', exact: true, name: 'Dossier', component: Dossier },
+  { path: '/afspraken', exact: true, name: 'Afspraken', component: Afspraken },
 ];
 
 export default routes;
