@@ -1,1 +1,16 @@
 // Here you can add other styles
+#omschrijving,
+#behandeling {
+    height: 100%;
+}
+
+#omschrijving:after {
+    content: "";
+    background-color: #000;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    display: block;
+}
