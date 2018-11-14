@@ -15,6 +15,7 @@
     display: block;
 }
 
+
 .home {
     img {
         width:100%;
@@ -22,4 +23,9 @@
     .div1 > .card {
         height: 96%;
     }
+}
+
+#herhaalrecept{
+    color: green;
+    display: none;
 }

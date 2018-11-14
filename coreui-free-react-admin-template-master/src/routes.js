@@ -197,6 +197,11 @@ const Appointment = Loadable({
   loading: Loading,
 });
 
+const Medication = Loadable({
+  loader: () => import('./views/Epd/Medication/Medication'),
+  loading: Loading,
+});
+
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -244,6 +249,7 @@ const routes = [
   { path: '/home', exact: true, name: '', component: Home },
   { path: '/dossier', exact: true, name: 'Dossier', component: Dossier },
   { path: '/afspraken', exact: true, name: 'Afspraken', component: Appointment },
+  { path: '/medicatie', exact: true, name: 'Medicatie', component: Medication },
 ];
 
 export default routes;
