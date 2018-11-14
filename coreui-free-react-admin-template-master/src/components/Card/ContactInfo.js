@@ -9,6 +9,7 @@ class ContactInfoCard extends Component {
                 <CardHeader>
                     <i className="fa fa-phone"></i> Contact Informatie
                 </CardHeader>
+                {/* try to access the information off personalData.js */}
                 <CardBody>
                     <p><b>Telefoon: </b> 06 51 51 51 51</p>
                     <p><b>(Prive) Telefoon: </b> 06 51 51 51 51</p>
