@@ -55,10 +55,6 @@ class MedicatieTable extends Component {
         });
     }
 
-    toggleHerhaal() {
-        document.getElementById("herhaalrecept").style.display = "block";
-    }
-
     renderMedication = ({ medicationName, medicationQuantity, medicationOften, medicationDate, medicationEndDate }) => <tr onClick={this.toggleLarge}>
     <td>{medicationName}</td>
     <td>{medicationQuantity}</td>
@@ -67,6 +63,7 @@ class MedicatieTable extends Component {
     <td>{medicationEndDate}</td>
     <td><Button color="primary" onClick={()=>{ alert('Herhaalrecept is aangevraagd!'); }}>Aanvragen</Button></td>
     </tr>
+
     render() {
         const { medication } = this.state
         return (
@@ -84,7 +81,6 @@ class MedicatieTable extends Component {
                     </thead>
                     <tbody>
                         {medication.map(this.renderMedication)}
-                        
                     </tbody>
                 </Table>
             </div>
