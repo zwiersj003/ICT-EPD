@@ -15,5 +15,10 @@ export default {
       url: '/afspraken',
       icon: 'fa fa-calendar-o',
     },
+    {
+      name: 'Medicatie',
+      url: '/medicatie',
+      icon: 'fa fa-heartbeat',
+    },
   ],
 };
