@@ -11,28 +11,38 @@ class HistoryMedicationTable extends Component {
             medication: [
                 {
                     medicationName: 'Paracetamol',
-                    medicationStatus: 'Actief',
-                    medicationDate: '14-11-2018'
+                    medicationQuantity: '1 pil',
+                    medicationOften: '1x per dag',
+                    medicationDate: '01-11-2017',
+                    medicationEndDate: '14-05-2018'
                 },
                 {
                     medicationName: 'Celocoxib',
-                    medicationStatus: 'Actief',
-                    medicationDate: '14-11-2018'
+                    medicationQuantity: '1 pil',
+                    medicationOften: '1x per dag',
+                    medicationDate: '05-09-2017',
+                    medicationEndDate: '25-01-2018'
                 },
                 {
                     medicationName: 'Oxicodon',
-                    medicationStatus: 'Actief',
-                    medicationDate: '14-11-2018'
+                    medicationQuantity: '1 pil',
+                    medicationOften: '1x per dag',
+                    medicationDate: '29-06-2017',
+                    medicationEndDate: '29-12-2017'
                 },
                 {
                     medicationName: 'Movicolon',
-                    medicationStatus: 'Actief',
-                    medicationDate: '14-11-2018'
+                    medicationQuantity: '1 pil',
+                    medicationOften: '1x per dag',
+                    medicationDate: '29-06-2017',
+                    medicationEndDate: '29-12-2017'
                 },
                 {
                     medicationName: 'Pantoprazol',
-                    medicationStatus: 'Actief',
-                    medicationDate: '14-11-2018'
+                    medicationQuantity: '1 pil',
+                    medicationOften: '1x per dag',
+                    medicationDate: '01-01-2015',
+                    medicationEndDate: '01-01-2016'
                 },
             ]
         };
@@ -49,7 +59,13 @@ class HistoryMedicationTable extends Component {
         document.getElementById("herhaalrecept").style.display = "block";
     }
 
-    renderMedication = ({ medicationName, medicationStatus, medicationDate }) => <tr onClick={this.toggleLarge}><td>{medicationName}</td><td>{medicationStatus}</td><td>{medicationDate}</td></tr>
+    renderMedication = ({ medicationName, medicationQuantity, medicationOften, medicationDate, medicationEndDate }) => <tr onClick={this.toggleLarge}>
+    <td>{medicationName}</td>
+    <td>{medicationQuantity}</td>
+    <td>{medicationOften}</td>
+    <td>{medicationDate}</td>
+    <td>{medicationEndDate}</td>
+    </tr>
 
     render() {
         const { medication } = this.state
@@ -59,52 +75,14 @@ class HistoryMedicationTable extends Component {
                     <thead>
                         <tr>
                             <th>Medicijn</th>
-                            <th>Status</th>
+                            <th>Hoeveelheid</th>
+                            <th>Hoe vaak ingenomen</th>
                             <th>Datum</th>
+                            <th>Einddatum</th>
                         </tr>
                     </thead>
                     <tbody>
                         {medication.map(this.renderMedication)}
-                        <Modal isOpen={this.state.large} toggle={this.toggleLarge} className={'modal-lg ' + this.props.className}>
-                            <ModalHeader toggle={this.toggleLarge}>Paracetamol</ModalHeader>
-                            <ModalBody>
-                                <div id="medication-info">
-                                    <Row>
-                                        <Col md="6">
-                                            <p><b>Medicatie:</b> Paracetamol</p>
-                                            <p><b>Hoeveelheid:</b> 1000 mg</p>
-                                            <p><b>Hoe vaak innemen:</b> 4x per dag</p>
-                                        </Col>
-                                        <Col md="6">
-                                            <p><b>Datum medicijn gekregen:</b> 14 november 2018</p>
-                                            <p><b>Eind datum medicijn:</b> Geen einddatum</p>
-                                        </Col>
-                                    </Row>
-                                </div>
-                                <div className="extra-info">
-                                    <Row>
-                                        <Col md="6">
-                                            <div id="description">
-                                                <h4>Omschrijving</h4>
-                                                Paracetamol (Amerikaans Engels: acetaminophen) is een pijnstillend en koortsverlagend middel. In combinatie met andere geneesmiddelen wordt paracetamol ook tegen symptomen van verkoudheid ingezet. De naam paracetamol is afgeleid van de chemische naam: para-acetylaminofenol. 
-                                </div>
-                                        </Col>
-                                        <Col md="6">
-                                            <div id="treatment">
-                                                <h4>Herhaal recept aanvragen</h4>
-                                                <Button color="primary" onClick={this.toggleHerhaal}>Aanvragen</Button>
-                                                <div id="herhaalrecept">
-                                                    <p4>Herhaalrecept is aangevraagd!</p4>
-                                                </div>
-                                </div>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </ModalBody>
-                            <ModalFooter>
-                                <Button color="primary" onClick={this.toggleLarge}>Sluiten</Button>
-                            </ModalFooter>
-                        </Modal>
                     </tbody>
                 </Table>
             </div>
