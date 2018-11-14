@@ -12,27 +12,37 @@ class MedicatieTable extends Component {
                 {
                     medicationName: 'Paracetamol',
                     medicationQuantity: '1000 mg',
-                    medicationOften: '4x per dag'
+                    medicationOften: '4x per dag',
+                    medicationDate: '14 november 2018',
+                    medicationEndDate: 'Geen einddatum'
                 },
                 {
                     medicationName: 'Celocoxib',
                     medicationQuantity: '150 mg',
-                    medicationOften: '2x per dag'
+                    medicationOften: '2x per dag',
+                    medicationDate: '14 november 2018',
+                    medicationEndDate: 'Geen einddatum'
                 },
                 {
                     medicationName: 'Oxicodon',
                     medicationQuantity: '1 pil',
-                    medicationOften: '2x per dag'
+                    medicationOften: '2x per dag',
+                    medicationDate: '14 november 2018',
+                    medicationEndDate: 'Geen einddatum'
                 },
                 {
                     medicationName: 'Movicolon',
                     medicationQuantity: '1 pil',
-                    medicationOften: '1x per dag'
+                    medicationOften: '1x per dag',
+                    medicationDate: '14 november 2018',
+                    medicationEndDate: 'Geen einddatum'
                 },
                 {
                     medicationName: 'Pantoprazol',
                     medicationQuantity: '1 pil',
-                    medicationOften: '1x per dag'
+                    medicationOften: '1x per dag',
+                    medicationDate: '14 november 2018',
+                    medicationEndDate: 'Geen einddatum'
                 },
             ]
         };
@@ -49,67 +59,75 @@ class MedicatieTable extends Component {
         document.getElementById("herhaalrecept").style.display = "block";
     }
 
-    renderMedication = ({ medicationName, medicationQuantity, medicationOften }) => <tr onClick={this.toggleLarge}><td>{medicationName}</td><td>{medicationQuantity}</td><td>{medicationOften}</td></tr>
+    renderMedication = ({ medicationName, medicationQuantity, medicationOften, medicationDate, medicationEndDate }) => <tr onClick={this.toggleLarge}>
+    <td>{medicationName}</td>
+    <td>{medicationQuantity}</td>
+    <td>{medicationOften}</td>
+    <td>{medicationDate}</td>
+    <td>{medicationEndDate}</td>
+    <td><Button color="primary" onClick={this.toggleHerhaal}>Aanvragen</Button></td>
+    </tr>
 
-    render() {
-        const { medication } = this.state
-        return (
-            <div className="medication-table">
-                <Table responsive striped hover bordered id="table-modules">
-                    <thead>
-                        <tr>
-                            <th>Medicatie</th>
-                            <th>Hoeveelheid</th>
-                            <th>Hoe vaak innemen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {medication.map(this.renderMedication)}
-                        <Modal isOpen={this.state.large} toggle={this.toggleLarge} className={'modal-lg ' + this.props.className}>
-                            <ModalHeader toggle={this.toggleLarge}>Paracetamol</ModalHeader>
-                            <ModalBody>
-                                <div id="medication-info">
-                                    <Row>
-                                        <Col md="6">
-                                            <p><b>Medicatie:</b> Paracetamol</p>
-                                            <p><b>Hoeveelheid:</b> 1000 mg</p>
-                                            <p><b>Hoe vaak innemen:</b> 4x per dag</p>
-                                        </Col>
-                                        <Col md="6">
-                                            <p><b>Datum medicijn gekregen:</b> 14 november 2018</p>
-                                            <p><b>Eind datum medicijn:</b> Geen einddatum</p>
-                                        </Col>
-                                    </Row>
-                                </div>
-                                <div className="extra-info">
-                                    <Row>
-                                        <Col md="6">
-                                            <div id="description">
-                                                <h4>Omschrijving</h4>
-                                                Paracetamol (Amerikaans Engels: acetaminophen) is een pijnstillend en koortsverlagend middel. In combinatie met andere geneesmiddelen wordt paracetamol ook tegen symptomen van verkoudheid ingezet. De naam paracetamol is afgeleid van de chemische naam: para-acetylaminofenol. 
-                                </div>
-                                        </Col>
-                                        <Col md="6">
-                                            <div id="treatment">
-                                                <h4>Herhaal recept aanvragen</h4>
-                                                <Button color="primary" onClick={this.toggleHerhaal}>Aanvragen</Button>
-                                                <div id="herhaalrecept">
-                                                    <p4>Herhaalrecept is aangevraagd!</p4>
-                                                </div>
-                                </div>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </ModalBody>
-                            <ModalFooter>
-                                <Button color="primary" onClick={this.toggleLarge}>Sluiten</Button>
-                            </ModalFooter>
-                        </Modal>
-                    </tbody>
-                </Table>
-            </div>
-        );
-    }
+    // render() {
+    //     const { medication } = this.state
+    //     return (
+    //         <div className="medication-table">
+    //             <Table responsive striped hover bordered id="table-modules">
+    //                 <thead>
+    //                     <tr>
+    //                         <th>Medicatie</th>
+    //                         <th>Hoeveelheid</th>
+    //                         <th>Hoe vaak innemen</th>
+    //                         <th>Datum medicijn gekregen</th>
+    //                         <th>Einddatum medicijn</th>
+    //                         <th>Herhaal recept aanvragen</th>
+    //                     </tr>
+    //                 </thead>
+    //                 <tbody>
+    //                     {medication.map(this.renderMedication)}
+    //                     <Modal isOpen={this.state.large} toggle={this.toggleLarge} className={'modal-lg ' + this.props.className}>
+    //                         <ModalHeader toggle={this.toggleLarge}>Paracetamol</ModalHeader>
+    //                         <ModalBody>
+    //                             <div id="medication-info">
+    //                                 <Row>
+    //                                     <Col md="6">
+    //                                         <p><b>Medicatie:</b> Paracetamol</p>
+    //                                         <p><b>Hoeveelheid:</b> 1000 mg</p>
+    //                                         <p><b>Hoe vaak innemen:</b> 4x per dag</p>
+    //                                     </Col>
+    //                                     <Col md="6">
+    //                                         <p><b>Datum medicijn gekregen:</b> 14 november 2018</p>
+    //                                         <p><b>Eind datum medicijn:</b> Geen einddatum</p>
+    //                                     </Col>
+    //                                 </Row>
+    //                             </div>
+    //                             <div className="extra-info">
+    //                                 <Row>
+    //                                     <Col md="6">
+    //                                         <div id="description">
+    //                                             <h4>Omschrijving</h4>
+    //                                             Paracetamol (Amerikaans Engels: acetaminophen) is een pijnstillend en koortsverlagend middel. In combinatie met andere geneesmiddelen wordt paracetamol ook tegen symptomen van verkoudheid ingezet. De naam paracetamol is afgeleid van de chemische naam: para-acetylaminofenol. 
+    //                             </div>
+    //                                     </Col>
+    //                                     <Col md="6">
+    //                                         <div id="treatment">
+    //                                             <h4>Herhaal recept aanvragen</h4>
+    //                                             <Button color="primary" onClick={this.toggleHerhaal}>Aanvragen</Button>
+                                                
+    //                             </div>
+    //                                     </Col>
+    //                                 </Row>
+    //                             </div>
+    //                         </ModalBody>
+    //                         <ModalFooter>
+    //                             <Button color="primary" onClick={this.toggleLarge}>Sluiten</Button>
+    //                         </ModalFooter>
+    //                     </Modal>
+    //                 </tbody>
+    //             </Table>
+    //         </div>
+    //     );
+    // }
 }
 
 export default MedicatieTable;
