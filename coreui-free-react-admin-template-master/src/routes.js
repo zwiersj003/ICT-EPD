@@ -192,8 +192,8 @@ const Dossier = Loadable({
   loading: Loading,
 });
 
-const Afspraken = Loadable({
-  loader: () => import('./views/Epd/Afspraken/Afspraken'),
+const Appointment = Loadable({
+  loader: () => import('./views/Epd/Appointment/Appointment'),
   loading: Loading,
 });
 
@@ -243,7 +243,7 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/home', exact: true, name: '', component: Home },
   { path: '/dossier', exact: true, name: 'Dossier', component: Dossier },
-  { path: '/afspraken', exact: true, name: 'Afspraken', component: Afspraken },
+  { path: '/afspraken', exact: true, name: 'Afspraken', component: Appointment },
 ];
 
 export default routes;

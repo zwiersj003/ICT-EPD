@@ -25,7 +25,7 @@ class AfspraakModal extends Component {
             <Modal isOpen={this.state.large} toggle={this.toggleLarge} className={'modal-lg ' + this.props.className}>
                 <ModalHeader toggle={this.toggleLarge}>Titel</ModalHeader>
                 <ModalBody>
-                    <div id="afpraak-info">
+                    <div id="appointment-info">
                         <Row>
                             <Col md="6">
                                 <p><b>Locatie:</b> AMC</p>
@@ -41,13 +41,13 @@ class AfspraakModal extends Component {
                     <div className="extra-info">
                         <Row>
                             <Col md="6">
-                                <div id="omschrijving">
+                                <div id="description">
                                     <h4>Omschrijving</h4>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit tristique ex, non sollicitudin mi molestie quis. Sed condimentum imperdiet ex, in viverra nisi molestie nec. Quisque et congue turpis, eget rhoncus ex. Curabitur elementum enim ac mollis maximus. Pellentesque a euismod lorem. Ut vel dolor libero. Integer dictum venenatis lorem. Proin bibendum varius massa, sed volutpat purus varius quis. Quisque quis mi at libero facilisis faucibus non vitae urna. Fusce mattis pulvinar nunc id dapibus. Cras et condimentum dui. Phasellus nec nisi in tortor auctor porta. Aliquam id nulla nibh.
                                 </div>
                             </Col>
                             <Col md="6">
-                                <div id="behandeling">
+                                <div id="treatment">
                                     <h4>Behandeling</h4>
                                     Lorem ipsum
                                 </div>

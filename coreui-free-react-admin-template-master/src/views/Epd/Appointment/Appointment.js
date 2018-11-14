@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Button, Card, CardBody, CardHeader, Col, Row, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-import AfspraakModal from '../../../components/Modal/AfspraakModal'
+import { Card, CardBody, CardHeader, Col, Row } from 'reactstrap'
+import AppointmentTable from '../../../components/Table/AppointmentTable';
 
 class Afspraken extends Component {
     render() {
         return (
             <div className="animated fadeIn">
-                <div className="afpraken">
+                <div className="appointments">
                     <Row>
                         <Col sm="3">
                             <Card>
@@ -23,7 +23,7 @@ class Afspraken extends Component {
                                     <i className="fa fa-calendar-o"></i> Afspraken
                                 </CardHeader>
                                 <CardBody>
-                                    <AfspraakModal />
+                                    <AppointmentTable />
                                 </CardBody>
                             </Card>
                         </Col>

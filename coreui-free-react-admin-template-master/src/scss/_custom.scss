@@ -1,10 +1,10 @@
 // Here you can add other styles
-#omschrijving,
-#behandeling {
+#description,
+#treatment {
     height: 100%;
 }
 
-#omschrijving:after {
+#description:after {
     content: "";
     background-color: #000;
     position: absolute;
