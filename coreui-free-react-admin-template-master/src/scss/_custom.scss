@@ -20,9 +20,13 @@
     img {
         width:100%;
     }
-    .div1 > .card {
-        height: 96%;
-    }
+    .div1 {
+        .personalData {
+            .card { 
+                height: 534px;
+            }
+        }
+    } 
 }
 
 #herhaalrecept{

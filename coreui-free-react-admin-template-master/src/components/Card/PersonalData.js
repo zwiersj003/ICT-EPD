@@ -60,28 +60,30 @@ class PersonalData extends Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader>
-                    <i className="fa fa-user"></i> Persoonsgegevens
-                </CardHeader>
-                <CardBody>
-                    <Row>
-                        <Col md="3">
-                            <img src="/../../../assets/img/avatars/6.jpg"/>
-                        </Col>
-                        <Col md="9">
-                            <div>
-                                    <p><b>Naam:</b> {this.state.users[this.state.randomUser].name} </p> 
-                                    <p><b>Straatnaam: </b> {this.state.users[this.state.randomUser].street} </p>
-                                    <p><b>Woonplaats: </b> {this.state.users[this.state.randomUser].city} </p>
-                                    <p><b>Geboortedatum: </b> {this.state.users[this.state.randomUser].dateOfBirth} </p>
-                                    <p><b>BSN: </b> {this.state.users[this.state.randomUser].bsn} </p>
-                                    <p><b>Email: </b> {this.state.users[this.state.randomUser].email} </p>
-                            </div>
-                        </Col>
-                    </Row>
-                </CardBody>
-            </Card>
+         <div class ="personalData">
+                <Card>
+                    <CardHeader>
+                        <i className="fa fa-user"></i> Persoonsgegevens
+                    </CardHeader>
+                    <CardBody>
+                        <Row>
+                            <Col md="3">
+                                <img src="/../../../assets/img/avatars/6.jpg"/>
+                            </Col>
+                            <Col md="9">
+                                <div>
+                                        <p><b>Naam:</b> {this.state.users[this.state.randomUser].name} </p> 
+                                        <p><b>Straatnaam: </b> {this.state.users[this.state.randomUser].street} </p>
+                                        <p><b>Woonplaats: </b> {this.state.users[this.state.randomUser].city} </p>
+                                        <p><b>Geboortedatum: </b> {this.state.users[this.state.randomUser].dateOfBirth} </p>
+                                        <p><b>BSN: </b> {this.state.users[this.state.randomUser].bsn} </p>
+                                        <p><b>Email: </b> {this.state.users[this.state.randomUser].email} </p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Card>
+</div>
         )
     }
 }

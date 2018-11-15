@@ -28,24 +28,24 @@ class Home extends Component {
         return (
             <div className="animated fadeIn">
                  <div className="home">
-                 <div className="divparent">
-                    <Row>
+                    <div className="divparent div1">
+                        <Row>
+                            
+                            <Col sm="6" >
+                                <Col>
+                                    <PersonalData/>
+                                </Col>
+                            </Col>
+                            <Col md="6">
+                                <Col md ="12" >
+                                    <InsuranceCard />
+                                </Col>
+                                <Col md="12">
+                                    <ContactInfo />
+                                </Col>
+                            </Col>
                         
-                        <Col sm="6" className="div1">
-                            <Col>
-                                <PersonalData/>
-                            </Col>
-                        </Col>
-                        <Col md="6">
-                            <Col md ="12" >
-                                <InsuranceCard />
-                            </Col>
-                            <Col md="12">
-                                <ContactInfo />
-                            </Col>
-                        </Col>
-                    
-                    </Row>
+                        </Row>
                     </div>
                 </div>
             </div>
