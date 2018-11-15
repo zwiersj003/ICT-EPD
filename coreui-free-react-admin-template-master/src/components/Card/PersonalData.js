@@ -60,7 +60,7 @@ class PersonalData extends Component {
 
     render() {
         return (
-         <div class ="personalData">
+         <div className="personalData">
                 <Card>
                     <CardHeader>
                         <i className="fa fa-user"></i> Persoonsgegevens
