@@ -1,47 +1,44 @@
 import React, { Component } from 'react'
-import { Button, Card, CardBody, CardHeader, Col, Row, Table, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import { Button, Col, Row, Table, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 
-class AfspraakTabel extends Component {
+class Appointment extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             modal: false,
             large: false,
-            appointments: [
-                {
-                    appointmentID: 3,
-                    appointment: 'Spoedeisende Hulp',
-                    date: '09-12-2017',
-                    location: 'Amstelland Ziekenhuis'
-                },
-                {
-                    appointmentID: 2,
-                    appointment: 'Huisarts',
-                    date: '09-12-2017',
-                    location: 'Amstelland Ziekenhuis'
-                },
-                {
-                    appointmentID: 1,
-                    appointment: 'Oogheelkunde',
-                    date: '18-02-2017',
-                    location: 'VUMC'
-                },
-            ]
+            currentlySelected: 0
         };
         this.toggleLarge = this.toggleLarge.bind(this);
     }
 
     toggleLarge() {
         this.setState({
-            large: !this.state.large,
+            large: !this.state.large
         });
     }
 
-    renderAppointment = ({ appointmentID, appointment, date, location }) => <tr onClick={this.toggleLarge}><td>{appointmentID}</td><td>{appointment}</td><td>{date}</td><td>{location}</td></tr>
+    setModal(currentlySelected) {
+        this.setState({
+            currentlySelected: currentlySelected - 1
+        });
+        console.log(this.state.currentlySelected)
+        this.toggleLarge()
+    }
+
+    renderAppointment = ({ appointmentID, appointment, date, location }) => (
+        <tr key={appointmentID} onClick={() => this.setModal(appointmentID)}>
+            <td>{appointmentID}</td>
+            <td>{appointment}</td>
+            <td>{date}</td>
+            <td>{location}</td>
+        </tr>)
 
     render() {
-        const { appointments } = this.state
+        let { appointments } = this.props
+        let { currentlySelected } = this.state
+        const modalAppointment = appointments[currentlySelected]
         return (
             <div className="appointment-table">
                 <Table responsive striped hover bordered id="table-modules">
@@ -56,18 +53,18 @@ class AfspraakTabel extends Component {
                     <tbody>
                         {appointments.map(this.renderAppointment)}
                         <Modal isOpen={this.state.large} toggle={this.toggleLarge} className={'modal-lg ' + this.props.className}>
-                            <ModalHeader toggle={this.toggleLarge}>Titel</ModalHeader>
+                            <ModalHeader toggle={this.toggleLarge}>{modalAppointment.appointment}</ModalHeader>
                             <ModalBody>
                                 <div id="appointment-info">
                                     <Row>
                                         <Col md="6">
-                                            <p><b>Locatie:</b> AMC</p>
-                                            <p><b>Datum:</b> 23-11-2018</p>
-                                            <p><b>Tijd:</b> 10:30</p>
+                                            <p><b>Locatie:</b> {modalAppointment.location}</p>
+                                            <p><b>Datum:</b> {modalAppointment.date}</p>
+                                            <p><b>Tijd:</b> {modalAppointment.time}</p>
                                         </Col>
                                         <Col md="6">
-                                            <p><b>Afdeling:</b> Polikliniek</p>
-                                            <p><b>Dokter:</b> R. Michels</p>
+                                            <p><b>Afdeling:</b> {modalAppointment.department}</p>
+                                            <p><b>Dokter:</b> {modalAppointment.doctor}</p>
                                         </Col>
                                     </Row>
                                 </div>
@@ -76,14 +73,14 @@ class AfspraakTabel extends Component {
                                         <Col md="6">
                                             <div id="description">
                                                 <h4>Omschrijving</h4>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit tristique ex, non sollicitudin mi molestie quis. Sed condimentum imperdiet ex, in viverra nisi molestie nec. Quisque et congue turpis, eget rhoncus ex. Curabitur elementum enim ac mollis maximus. Pellentesque a euismod lorem. Ut vel dolor libero. Integer dictum venenatis lorem. Proin bibendum varius massa, sed volutpat purus varius quis. Quisque quis mi at libero facilisis faucibus non vitae urna. Fusce mattis pulvinar nunc id dapibus. Cras et condimentum dui. Phasellus nec nisi in tortor auctor porta. Aliquam id nulla nibh.
-                                </div>
+                                                {modalAppointment.description}
+                                            </div>
                                         </Col>
                                         <Col md="6">
                                             <div id="treatment">
                                                 <h4>Behandeling</h4>
-                                                Lorem ipsum
-                                </div>
+                                                {modalAppointment.treatment}
+                                            </div>
                                         </Col>
                                     </Row>
                                 </div>
@@ -99,4 +96,4 @@ class AfspraakTabel extends Component {
     }
 }
 
-export default AfspraakTabel;
+export default Appointment;
