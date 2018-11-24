@@ -4,6 +4,9 @@ import './App.scss';
 
 // Containers
 import { DefaultLayout } from './containers';
+
+//Home Component
+//import { Home } from './views/Epd/Home';
 // Pages
 import { Login, Page404, Page500, Register } from './views/Pages';
 

@@ -5,11 +5,11 @@ export default {
       url: '/home',
       icon: 'icon-home',
     },
-    {
-      name: 'Dossier',
-      url: '/dossier',
-      icon: 'fa fa-folder-open',
-    },
+    // {
+    //   name: 'Dossier',
+    //   url: '/dossier',
+    //   icon: 'fa fa-folder-open',
+    // },
     {
       name: 'Afspraken',
       url: '/afspraken',
