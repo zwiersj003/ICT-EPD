@@ -14,7 +14,7 @@ class Medication extends Component {
                                 </CardHeader>
                                 <CardBody>
                                     <div id="herhaalrecept">
-                                        <p4>Herhaalrecept is aangevraagd!</p4>
+                                        <p>Herhaalrecept is aangevraagd!</p>
                                     </div>
                                     <MedicationTable/>
                                 </CardBody>

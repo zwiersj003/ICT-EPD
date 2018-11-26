@@ -59,7 +59,7 @@ class HistoryMedicationTable extends Component {
         document.getElementById("herhaalrecept").style.display = "block";
     }
 
-    renderMedication = ({ medicationName, medicationQuantity, medicationOften, medicationDate, medicationEndDate }) => <tr onClick={this.toggleLarge}>
+    renderMedication = ({ medicationName, medicationQuantity, medicationOften, medicationDate, medicationEndDate }) => <tr key={medicationName} onClick={this.toggleLarge}>
     <td>{medicationName}</td>
     <td>{medicationQuantity}</td>
     <td>{medicationOften}</td>
